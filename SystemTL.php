@@ -214,7 +214,7 @@ abstract class SystemTL {
 			$return = $this->Environment->httpReferer;
 		}
 		if (!strlen($return)) {
-			$return = (TL_MODE == 'BE') ? 'typolight/main.php' : $this->Environment->url;
+			$return = (TL_MODE == 'BE') ? 'contao/main.php' : $this->Environment->url;
 		}
 		return ampersand(urldecode($return), $blnEncodeAmpersands);
 	}

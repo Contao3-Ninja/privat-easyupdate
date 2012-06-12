@@ -87,6 +87,7 @@ class easyupdate extends BackendModule {
 		$return .= '<h3><label for="ctrl_original">' . $GLOBALS['TL_LANG']['easyupdate']['selectfile'] . '</label></h3>';
 		$return .= '<input type="hidden" name="do" value="easyupdate">';
 		$return .= '<input type="hidden" name="task" value="1">';
+		$return .= '<input type="hidden" name="REQUEST_TOKEN" value="<?php echo REQUEST_TOKEN; ?>">';
 		$return .= '<select name="filename" id="ctrl_original" class="tl_select" onfocus="Backend.getScrollOffset();">' . $strAllFiles . $strAllBackups . '</select> ';
 		$return .= '<input type="submit" class="tl_submit" alt="select a file" accesskey="s" value="' . specialchars($GLOBALS['TL_LANG']['easyupdate']['setfile']) . '" />';
 		$return .= '<p class="tl_help tl_tip">' . $GLOBALS['TL_LANG']['easyupdate']['description'] . '</p></form>';
@@ -172,6 +173,7 @@ class easyupdate extends BackendModule {
 		$return .= '</div><div style="float:left; width:40%;">';
 		$return .= '<h2>' . $GLOBALS['TL_LANG']['easyupdate']['noupdate'] . '</h2>';
 		$return .= '<form action="' . ampersand($this->Environment->request) . '" name="tl_select_config" class="tl_form" method="POST">';
+		$return .= '<input type="hidden" name="REQUEST_TOKEN" value="<?php echo REQUEST_TOKEN; ?>">';
 		$return .= '<input type="hidden" name="config[update]" value="' . $update . '">';
 		$return .= '<input type="hidden" name="config[import]" value="' . htmlentities(serialize($this->IMPORT)) . '">';
 		$id = "'config'";
@@ -180,7 +182,7 @@ class easyupdate extends BackendModule {
 		$return .= '</form></div><div style="clear:both;"></div><p class="tl_help tl_tip" style="padding:5px 0px 0px 5px;">' . $GLOBALS['TL_LANG']['easyupdate']['noupdatetext'] . '</p>';
 		$return .= '';
 		$return .= '<div style="font-family:Verdana,sans-serif; font-size:11px; margin:18px 3px 12px 3px; overflow:hidden;">';
-		$return .= '<a href="' . $this->Environment->base . 'typolight/main.php?do=easyupdate" style="float:left;">&lt; ' . $GLOBALS['TL_LANG']['easyupdate']['previous'] . '</a>';
+		$return .= '<a href="' . $this->Environment->base . 'contao/main.php?do=easyupdate" style="float:left;">&lt; ' . $GLOBALS['TL_LANG']['easyupdate']['previous'] . '</a>';
 		$return .= '<a href="' . str_replace('task=1', 'task=2', $this->Environment->base . $this->Environment->request) . '" style="float:right;">' . $GLOBALS['TL_LANG']['easyupdate']['next'] . ' &gt;</a>';
 		$return .= '</div>';
 		$return .= '</div>';
@@ -247,7 +249,7 @@ class easyupdate extends BackendModule {
 		$return .= '<div style="font-family:Verdana,sans-serif; font-size:11px; height:500px; padding:0px 20px 0px 10px; overflow:auto; background:#eee; border:1px solid #999;">';
 		$return .= $text . '</div>';
 		$return .= '<div style="font-family:Verdana,sans-serif; font-size:11px; margin:18px 3px 12px 3px; overflow:hidden;">';
-		$return .= '<a href="' . $this->Environment->base . 'typolight/main.php?do=easyupdate" style="float:left;">&lt; ' . $GLOBALS['TL_LANG']['easyupdate']['previous'] . '</a>';
+		$return .= '<a href="' . $this->Environment->base . 'contao/main.php?do=easyupdate" style="float:left;">&lt; ' . $GLOBALS['TL_LANG']['easyupdate']['previous'] . '</a>';
 		$return .= '<a href="' . str_replace('task=2', 'task=3', $this->Environment->base . $this->Environment->request) . '" style="float:right;">' . $GLOBALS['TL_LANG']['easyupdate']['next'] . ' &gt;</a>';
 		$return .= '</div></div>';
 		return $return;
@@ -267,7 +269,7 @@ class easyupdate extends BackendModule {
 		}
 		$return .= '</ol></div>';
 		$return .= '<div style="font-family:Verdana,sans-serif; font-size:11px; margin:18px 3px 12px 3px; overflow:hidden;">';
-		$return .= '<a href="' . $this->Environment->base . 'typolight/main.php?do=easyupdate" style="float:left;">&lt; ' . $GLOBALS['TL_LANG']['easyupdate']['previous'] . '</a>';
+		$return .= '<a href="' . $this->Environment->base . 'contao/main.php?do=easyupdate" style="float:left;">&lt; ' . $GLOBALS['TL_LANG']['easyupdate']['previous'] . '</a>';
 		$return .= '<a href="' . str_replace('task=3', 'task=4', $this->Environment->base . $this->Environment->request) . '" style="float:right;">' . $GLOBALS['TL_LANG']['easyupdate']['next'] . ' &gt;</a>';
 		$return .= '</div>';
 		$return .= '</div>';
@@ -283,7 +285,7 @@ class easyupdate extends BackendModule {
 		$arrFiles = $objArchive->getFileList();
 		$i = strpos($arrFiles[0], '/') + 1;
 		$objBackup = new ZipWriterTL('tl_files/easyupdate/backup/bak' . date('YmdHi') . '-' . VERSION . '.' . BUILD . '.zip');
-		$rootpath = 'typolight-' . VERSION . '.' . BUILD . '/';
+		$rootpath = 'contao-' . VERSION . '.' . BUILD . '/';
 		foreach ($arrFiles as $strFile) {
 			$strFile = substr($strFile, $i);
 			if ($strFile == 'system/runonce.php') {
@@ -299,7 +301,7 @@ class easyupdate extends BackendModule {
 		$objBackup->close();
 		$return .= '</ol></div>';
 		$return .= '<div style="font-family:Verdana,sans-serif; font-size:11px; margin:18px 3px 12px 3px; overflow:hidden;">';
-		$return .= '<a href="' . $this->Environment->base . 'typolight/main.php?do=easyupdate" style="float:left;">&lt; ' . $GLOBALS['TL_LANG']['easyupdate']['previous'] . '</a>';
+		$return .= '<a href="' . $this->Environment->base . 'contao/main.php?do=easyupdate" style="float:left;">&lt; ' . $GLOBALS['TL_LANG']['easyupdate']['previous'] . '</a>';
 		$return .= '<a href="' . str_replace('task=4', 'task=5', $this->Environment->base . $this->Environment->request) . '" style="float:right;">' . $GLOBALS['TL_LANG']['easyupdate']['next'] . ' &gt;</a>';
 		$return .= '</div>';
 		$return .= '</div>';
@@ -353,7 +355,7 @@ class easyupdate extends BackendModule {
 		$this->log('localremote update completed', 'easyupdate getFiles(), listfiles(), backupfiles(), copyfiles()', TL_GENERAL);
 		$return .= '</ol></div>';
 		$return .= '<div style="font-family:Verdana,sans-serif; font-size:11px; margin:18px 3px 12px 3px; overflow:hidden;">';
-		$return .= '<a href="' . $this->Environment->base . 'typolight/install.php" style="float:right;">' . $GLOBALS['TL_LANG']['easyupdate']['next'] . ' &gt;</a>';
+		$return .= '<a href="' . $this->Environment->base . 'contao/install.php" style="float:right;">' . $GLOBALS['TL_LANG']['easyupdate']['next'] . ' &gt;</a>';
 		$return .= '</div>';
 		$return .= '</div>';
 		return $return;
