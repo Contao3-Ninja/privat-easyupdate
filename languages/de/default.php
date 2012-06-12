@@ -21,6 +21,7 @@ if (!defined('TL_ROOT'))
  * PHP version 5
  * @copyright	Copyright easyupdate 2009
  * @author		Lutz Schoening
+ * @author		Glen Langer - offline fork 
  * @package		easyupdate
  * @license		LGPL
  */
@@ -29,7 +30,7 @@ $GLOBALS['TL_LANG']['MOD']['easyupdate'] = array (
 	'Installieren Sie eine neue Version aus dem Backend heraus.'
 );
 $GLOBALS['TL_LANG']['easyupdate']['backBT'] = 'Zurück';
-$GLOBALS['TL_LANG']['easyupdate']['headline'] = 'easyUpdate einer TYPOlight-Version (aktuelle Version: %s)';
+$GLOBALS['TL_LANG']['easyupdate']['headline'] = 'easyUpdate einer Contao-Version (aktuelle Version: %s)';
 $GLOBALS['TL_LANG']['easyupdate']['selectfile'] = 'Bitte wählen Sie ein Archiv aus (ZIP-Datei)';
 $GLOBALS['TL_LANG']['easyupdate']['description'] = 'Wählen Sie hier ein Archiv aus, welches im Verzeichnis (tl_files/easyupdate) abgelegt werden muss (ev. vorhandene Unterverzeichnisse werden nicht durchsucht). Es werden nur ZIP-Dateien unterstützt.';
 $GLOBALS['TL_LANG']['easyupdate']['setfile'] = 'Auswählen';
@@ -66,29 +67,22 @@ $GLOBALS['TL_LANG']['easyupdate']['readme']['text1'] = '<h2>Die Installation bes
 														<li>Aktualisierung der erforderlichen Dateien</li>
 														<li>Ausführung des Install-Tools</li></ul>
 														Für den 4. Schritt wird das Install-Tool verwendet. Es kann vorkommen, dass die Datenbank aktualisiert muss; darauf wird man im Install-Tool hingewiesen.														
-														Bitte beachten: Sofern die Config-Dateien überschrieben wurden, lautet das Passwort des Install-Tools "typolight".';
+														Bitte beachten: Sofern die Config-Dateien überschrieben wurden, lautet das Passwort des Install-Tools "contao".';
 $GLOBALS['TL_LANG']['easyupdate']['readme']['text2'] = '<h2>Sicherheitshinweise:</h2>
 														<ul><li>Es gibt keine 100%-ige Sicherheit, dass alles einwandfrei funktioniert. Seien Sie sich also bewusst, was Sie tun!</li>
 														<li>Machen Sie bei der ersten Verwendung dieses Tools ruhig eine zusätzliche Sicherung der Datenbank.</li>
 														<li>Das Tool greift auf das Dateisystem zu, das kann zu DATENVERLUST führen!</li>
 														<li>Alles was Sie machen, tun Sie auf eigene Gefahr.</li></ul>';
 $GLOBALS['TL_LANG']['easyupdate']['readme']['text3']['left'] = '<h2>Getestete und funktionierende Vorgänge:</h2>
-																<ul><li>2.5.x ====> 2.5.x</li>
-																<li>2.5.x ====> 2.6.x</li>															
-																<li>2.5.x ====> 2.7.x</li>
-																<li>2.6.x ====> 2.5.x</li>
-																<li>2.6.x ====> 2.6.x</li>
-																<li>2.6.x ====> 2.7.x</li>
-																<li>2.7.x ====> 2.7.x</li>
-																<li>2.7.x ====> 2.8.x</li></ul>';
+																<ul><li>2.9.x ====> 2.10.x</li>
+																<li>2.10.x ====> 2.11.x</li></ul>';
 $GLOBALS['TL_LANG']['easyupdate']['readme']['text3']['right'] = '<h2>Getestete und fehlerhafte Vorgänge:</h2>
 																<ul><li>2.6.x ====> 2.5.x</li>
 																<li>2.7.x ====> 2.5.x</li>
 																<li>2.7.x ====> 2.6.x</li>
 																<li>2.8.x ====> 2.5.x</li>
 																<li>2.5.x ====> 2.6.x</li>
-                                                                <li>2.8.x ====> 2.7.x</li></ul>';
-$GLOBALS['TL_LANG']['easyupdate']['readme']['text4'] = 'Getestet wurde eine Installation bis zur TYPOlight Version 2.7.2. Es sollte jedoch auch keine Probleme mit neueren Versionen geben. 
-														Die Funktionsfähigkeit mit TYPOlight vor der Version 2.5 wurde nicht getestet, könnte aber funktionieren.
+                                <li>2.8.x ====> 2.7.x</li></ul>';
+$GLOBALS['TL_LANG']['easyupdate']['readme']['text4'] = 'Getestet wurde eine Installation bis zur Contao Version 2.11. Nicht mit Contao 3.x möglich!
 														Wenn eine Versionsnummer X.X.X erscheint, dann ist wahrscheinlich die ZIP-Datei beschädigt.';
 ?>
