@@ -207,7 +207,7 @@ abstract class SystemTL {
 	 */
 	protected function getReferer($blnEncodeAmpersands = false) {
 		$session = $this->Session->getData();
-		$key = ($this->Environment->script == 'typolight/files.php') ? 'fileReferer' : 'referer';
+		$key = ($this->Environment->script == 'contao/files.php') ? 'fileReferer' : 'referer';
 		$return = preg_replace('/(&(amp;)?|\?)tg=[^& ]*/i', '', (($session[$key]['current'] != $this->Environment->requestUri) ? $session[$key]['current'] : $session[$key]['last']));
 		$return = preg_replace('/^' . preg_quote(TL_PATH, '/') . '\//i', '', $return);
 		if (!strlen($return) && TL_MODE == 'FE') {
