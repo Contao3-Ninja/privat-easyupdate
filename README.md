@@ -1,4 +1,4 @@
 privat-easyupdate
 =================
 
-Offline Fork from Contao Modul easyupdate
+Offline Fork from Contao Module easyupdate
