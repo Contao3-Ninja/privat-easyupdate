@@ -104,7 +104,6 @@ class easyupdate extends BackendModule
 		$return .= '<h3><label for="ctrl_original">' . $GLOBALS['TL_LANG']['easyupdate']['selectfile'] . '</label></h3>';
 		$return .= '<input type="hidden" name="do" value="easyupdate">';
 		$return .= '<input type="hidden" name="task" value="1">';
-		$return .= '<input type="hidden" name="REQUEST_TOKEN" value="<?php echo REQUEST_TOKEN; ?>">';
 		$return .= '<select name="filename" id="ctrl_original" class="tl_select" onfocus="Backend.getScrollOffset();">' . $strAllFiles . $strAllBackups . '</select> ';
 		$return .= '<input type="submit" class="tl_submit" alt="select a file" accesskey="s" value="' . specialchars($GLOBALS['TL_LANG']['easyupdate']['setfile']) . '" />';
 		$return .= '<p class="tl_help tl_tip">' . $GLOBALS['TL_LANG']['easyupdate']['description'] . '</p></form>';
@@ -209,7 +208,7 @@ class easyupdate extends BackendModule
 		$return .= '</div><div style="float:left; width:40%;">';
 		$return .= '<h2>' . $GLOBALS['TL_LANG']['easyupdate']['noupdate'] . '</h2>';
 		$return .= '<form action="' . ampersand($this->Environment->request) . '" name="tl_select_config" class="tl_form" method="POST">';
-		$return .= '<input type="hidden" name="REQUEST_TOKEN" value="<?php echo REQUEST_TOKEN; ?>">';
+		$return .= '<input type="hidden" name="REQUEST_TOKEN" value="'.REQUEST_TOKEN.'">';
 		$return .= '<input type="hidden" name="config[update]" value="' . $update . '">';
 		$return .= '<input type="hidden" name="config[import]" value="' . htmlentities(serialize($this->IMPORT)) . '">';
 		$id = "'config'";
