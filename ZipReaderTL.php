@@ -1,6 +1,5 @@
 <?php
-if (!defined('TL_ROOT'))
-	die('You can not access this file directly!');
+
 /**
  * TYPOlight webCMS
  * Copyright (C) 2005-2009 Leo Feyer
