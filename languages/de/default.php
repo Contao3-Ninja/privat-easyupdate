@@ -1,6 +1,5 @@
 <?php
-if (!defined('TL_ROOT'))
-	die('You can not access this file directly!');
+
 /**
  * TYPOlight webCMS
  * Copyright (C) 2005-2009 Leo Feyer
@@ -51,7 +50,7 @@ $GLOBALS['TL_LANG']['easyupdate']['previous'] = 'Zurück zum Hauptbildschirm';
 $GLOBALS['TL_LANG']['easyupdate']['settings'] = 'Einstellungen';
 $GLOBALS['TL_LANG']['easyupdate']['changelog']['headline'] = 'Changelog zwischen der Version %s und %s';
 $GLOBALS['TL_LANG']['easyupdate']['changelog']['same'] = 'Sie installieren die gleiche Version, daher auch keine Änderungen.';
-$GLOBALS['TL_LANG']['easyupdate']['changelog']['no'] = 'Der Changelog ist leider nicht lesbar. Weitere Informationen zu den Änderungen können Sie auf der TYPOlight-Homepage (http://www.typolight.org/) nachlesen.';
+$GLOBALS['TL_LANG']['easyupdate']['changelog']['no'] = 'Der Changelog ist leider nicht lesbar. Weitere Informationen zu den Änderungen können Sie auf der Contao-Homepage (http://www.contao.org/) nachlesen.';
 $GLOBALS['TL_LANG']['easyupdate']['content'] = 'Inhalt der Archiv-Datei';
 $GLOBALS['TL_LANG']['easyupdate']['backup'] = 'Sicherung der aktuellen Dateien';
 $GLOBALS['TL_LANG']['easyupdate']['backuped'] = 'Gesichert: ';
@@ -82,7 +81,7 @@ $GLOBALS['TL_LANG']['easyupdate']['readme']['text3']['right'] = '<h2>Getestete u
 																<li>2.7.x ====> 2.6.x</li>
 																<li>2.8.x ====> 2.5.x</li>
 																<li>2.5.x ====> 2.6.x</li>
-                                <li>2.8.x ====> 2.7.x</li></ul>';
+                                                                <li>2.8.x ====> 2.7.x</li></ul>';
 $GLOBALS['TL_LANG']['easyupdate']['readme']['text4'] = 'Getestet wurde eine Installation bis zur Contao Version 2.11. Nicht mit Contao 3.x möglich!
 														Wenn eine Versionsnummer X.X.X erscheint, dann ist wahrscheinlich die ZIP-Datei beschädigt.';
 ?>

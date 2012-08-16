@@ -1,6 +1,5 @@
 <?php
-if (!defined('TL_ROOT'))
-	die('You can not access this file directly!');
+
 /**
  * TYPOlight webCMS
  * Copyright (C) 2005-2009 Leo Feyer
@@ -26,9 +25,10 @@ if (!defined('TL_ROOT'))
  */
 array_insert($GLOBALS['BE_MOD']['system'], 3, array (
 	'easyupdate' => array (
-		'callback' => 'easyupdate',
-		'icon' => 'system/modules/easyupdate/html/icon.png',
+        'callback'  => 'easyupdate',
+        'icon'      => 'system/modules/easyupdate/html/icon.png',
 		
 	)
 ));
+
 ?>

@@ -1,6 +1,5 @@
 <?php
-if (!defined('TL_ROOT'))
-	die('You can not access this file directly!');
+
 /**
  * TYPOlight webCMS
  * Copyright (C) 2005-2009 Leo Feyer
@@ -21,15 +20,16 @@ if (!defined('TL_ROOT'))
  * PHP version 5
  * @copyright	Copyright easyupdate 2009
  * @author		Lutz Schoening
+ * @author		Glen Langer - offline fork 
  * @package		easyupdate
  * @license		LGPL
  */
 $GLOBALS['TL_LANG']['MOD']['easyupdate'] = array (
 	'easyUpdate',
-	'Update Typolight from the Backend'
+	'Update Contao from the Backend'
 );
 $GLOBALS['TL_LANG']['easyupdate']['backBT'] = 'Go back';
-$GLOBALS['TL_LANG']['easyupdate']['headline'] = 'easyUpdate your Typolight-version (current version: %s)';
+$GLOBALS['TL_LANG']['easyupdate']['headline'] = 'easyUpdate your Contao version (current version: %s)';
 $GLOBALS['TL_LANG']['easyupdate']['selectfile'] = 'Please select an archive (ZIP-file)';
 $GLOBALS['TL_LANG']['easyupdate']['description'] = 'Please select an archive from the directory (tl_files/easyupdate). The script do not search sub folders an accepted only ZIP-files.';
 $GLOBALS['TL_LANG']['easyupdate']['setfile'] = 'select';
@@ -42,14 +42,14 @@ $GLOBALS['TL_LANG']['easyupdate']['other_legend'] = 'other Files';
 $GLOBALS['TL_LANG']['easyupdate']['all'] = 'Select all';
 $GLOBALS['TL_LANG']['easyupdate']['noupdatetext'] = 'You can select files which are not updated. But the backup catch also these files.';
 $GLOBALS['TL_LANG']['easyupdate']['updatex'] = 'version (%s) ======> version (%s)';
-$GLOBALS['TL_LANG']['easyupdate']['update0'] = 'You will install an older version of Typolight. This is not impossible, are you sure? The version 2.7 have new passwords, so a update to a lower version can be become not so easy.';
-$GLOBALS['TL_LANG']['easyupdate']['update1'] = 'You will install a newer version of Typolight.';
+$GLOBALS['TL_LANG']['easyupdate']['update0'] = 'You will install an older version of Contao. This is not impossible, are you sure? The version 2.7 have new passwords, so a update to a lower version can be become not so easy.';
+$GLOBALS['TL_LANG']['easyupdate']['update1'] = 'You will install a newer version of Contao.';
 $GLOBALS['TL_LANG']['easyupdate']['update2'] = 'You will install the same version .';
 $GLOBALS['TL_LANG']['easyupdate']['next'] = 'Next step';
 $GLOBALS['TL_LANG']['easyupdate']['previous'] = 'Back to home';
 $GLOBALS['TL_LANG']['easyupdate']['changelog']['headline'] = 'Changelog between the version %s and %s';
 $GLOBALS['TL_LANG']['easyupdate']['changelog']['same'] = 'You try to install the same version. (Notice: There are no changes.)';
-$GLOBALS['TL_LANG']['easyupdate']['changelog']['no'] = 'The changelog is unable to read. For more information you can ask in the Typolight-Community (http://www.typolight.org).';
+$GLOBALS['TL_LANG']['easyupdate']['changelog']['no'] = 'The changelog is unable to read. For more information you can ask in the Contao-Community (http://www.contao.org).';
 $GLOBALS['TL_LANG']['easyupdate']['content'] = 'Content of the archive';
 $GLOBALS['TL_LANG']['easyupdate']['backup'] = 'Backup your files';
 $GLOBALS['TL_LANG']['easyupdate']['backuped'] = 'Backed up: ';
@@ -64,21 +64,16 @@ $GLOBALS['TL_LANG']['easyupdate']['readme']['text1'] = '<h2>The update have 4 st
 														<li>Backup your current files</li>
 														<li>Update the files</li>
 														<li>Run the install tool</li></ul>
-														It is possible that you must update the typolight database, in this case you see the install tool.
-														If you have delete the config file, the password for the install tool is: "typolight"';
+														It is possible that you must update the Contao database, in this case you see the install tool.
+														If you have delete the config file, the password for the install tool is: "contao"';
 $GLOBALS['TL_LANG']['easyupdate']['readme']['text2'] = '<h2>Security notice</h2>
 														<ul><li>Nothing is 100% secure. Be carefull with this tool.</li>
 														<li>You should make a database backup before run this tool the first time.</li>
 														<li>This tool change the file system, a data loss is possible.</li>
 														<li>You make all on your own risk.</li></ul>';
 $GLOBALS['TL_LANG']['easyupdate']['readme']['text3']['left'] = '<h2>Check and run</h2>
-																<ul><li>2.5.x ====> 2.5.x</li>
-																<li>2.5.x ====> 2.6.x</li>
-																<li>2.5.x ====> 2.7.x</li>
-																<li>2.6.x ====> 2.6.x</li>
-																<li>2.6.x ====> 2.7.x</li>
-																<li>2.7.x ====> 2.7.x</li>
-																<li>2.7.x ====> 2.8.x</li></ul>';
+																<ul><li>2.9.x ====> 2.10.x</li>
+																<li>2.10.x ====> 2.11.x</li></ul>';
 $GLOBALS['TL_LANG']['easyupdate']['readme']['text3']['right'] = '<h2>Check and error</h2>
 																<ul><li>2.6.x ====> 2.5.x</li>
 																<li>2.7.x ====> 2.5.x</li>
@@ -86,7 +81,6 @@ $GLOBALS['TL_LANG']['easyupdate']['readme']['text3']['right'] = '<h2>Check and e
 																<li>2.8.x ====> 2.5.x</li>
 																<li>2.5.x ====> 2.6.x</li>
                                                                 <li>2.8.x ====> 2.7.x</li></ul>';
-$GLOBALS['TL_LANG']['easyupdate']['readme']['text4'] = 'The installation until to the Typolight version 2.8.1 was checked, but newer version should be run too.
-														The work with a version bevore the 2.5 have not checked, but a update could be possible.
+$GLOBALS['TL_LANG']['easyupdate']['readme']['text4'] = 'The installation until to the Contao version 2.11 was checked. Not possible with Contao 3.x!.
 														If you see as the version information X.X.X the ZIP-file could be damaged.';
 ?>
